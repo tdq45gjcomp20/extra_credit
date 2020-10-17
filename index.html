@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Extra Credit</title>
+  </head>
+
+  <body>
+    <h1>Click the button to switch</h1>
+    <script language="javascript">
+      window.onload = function()
+      {
+        document.getElementById("btn").addEventListener("click", btnClick);
+      }
+
+      function btnClick()
+      {
+        let btn = document.getElementById("btn");
+        let leftInput = document.getElementById("leftInput");
+        let rightInput = document.getElementById("rightInput");
+        if (btn.value == "→") {
+          rightInput.value = leftInput.value;
+          leftInput.value = "";
+          btn.value = "←";
+        } else {
+          leftInput.value = rightInput.value;
+          rightInput.value = "";
+          btn.value = "→";
+        }
+      }
+
+    </script>
+
+    <form>
+      <input type="text" id="leftInput"/>
+      <input type="button" id="btn" value="→"/>
+      <input type="text" id="rightInput"/>
+      <br/>
+    </form><br/>
+  </body>
+</html>
